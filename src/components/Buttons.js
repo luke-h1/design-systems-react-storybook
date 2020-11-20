@@ -13,58 +13,58 @@ const BUTTON_MODIFIERS = {
     padding: 16px 24px;
   `,
 
-  warning: () => `
-    background-color: ${defaultTheme.status.warningColor};
-    color: ${defaultTheme.textColorInverted},
+  warning: ({ props }) => `
+    background-color: ${props.status.warningColor};
+    color: ${props.textColorInverted},
     &:hover, &:focus {
-      background-color: ${defaultTheme.status.warningColorHover},
-      outline: 3px solid ${defaultTheme.status.warningColorHover},
+      background-color: ${props.status.warningColorHover},
+      outline: 3px solid ${props.status.warningColorHover},
       
     }
 
     &:active { 
-      background-color: ${defaultTheme.status.warningColorActive}
+      background-color: ${props.status.warningColorActive}
     }
   `,
 
-  secondaryButtonWarning: () => `
+  secondaryButtonWarning: ({ props }) => `
     background: none;
-    border: 2px solid ${defaultTheme.status.warningColor};
-    color: ${defaultTheme.status.warningColor};
+    border: 2px solid ${props.status.warningColor};
+    color: ${props.status.warningColor};
   `,
 
-  tertiaryButtonWarning: () => `
+  tertiaryButtonWarning: ({ props }) => `
     background: none;
-    color: ${defaultTheme.status.warningColor};
+    color: ${props.status.warningColor};
   
   `,
 
-  primaryButtonError: () => `
-    background-color: ${defaultTheme.status.errorColor};
-    color: ${defaultTheme.textColorInverted};
+  primaryButtonError: ({ props }) => `
+    background-color: ${props.status.errorColor};
+    color: ${props.textColorInverted};
   `,
 
-  secondaryButtonError: () => `
+  secondaryButtonError: ({ props }) => `
     background: none;
-    border: 2px solid ${defaultTheme.status.errorColor};
-    color: ${defaultTheme.status.errorColor}; 
+    border: 2px solid ${props.status.errorColor};
+    color: ${props.status.errorColor}; 
   `,
 
-  tertiaryButtonError: () => `
+  tertiaryButtonError: ({ props }) => `
     background: none;
-    color: ${defaultTheme.status.errorColor}
+    color: ${props.status.errorColor}
   `,
-  error: () => `
+  error: ({ props }) => `
   background: none;
-  color: ${defaultTheme.status.errorColor};
+  color: ${props.status.errorColor};
   &:hover, &:focus {
-    background-color: ${defaultTheme.status.errorColorHover};
-    outline: 3px solid ${defaultTheme.status.errorColorHover};
+    background-color: ${props.status.errorColorHover};
+    outline: 3px solid ${props.status.errorColorHover};
     outline-offset: 2px;
     border: 2px solid transparent;
   }
   &:active {
-    background-color: ${defaultTheme.status.errorColorActive};
+    background-color: ${props.status.errorColorActive};
   }
 `,
 };
@@ -101,12 +101,12 @@ const PrimaryButton = styled(Button)`
   padding: 12px 24px;
   font-size: 1rem;
   &:hover {
-    background-color: ${defaultTheme.primaryHoverColor};
-    color: ${defaultTheme.textColorOnPrimary};
+    background-color: ${(props) => props.primaryHoverColor};
+    color: ${(props) => props.textColorOnPrimary};
   }
   &:disabled {
     background: ${defaultTheme.disabled};
-    color: ${defaultTheme.textOnDisabled};
+    color: ${(props) => props.textOnDisabled};
     cursor: not-allowed;
   }
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
@@ -114,16 +114,16 @@ const PrimaryButton = styled(Button)`
 
 export const SecondaryButton = styled(Button)`
   background: none;
-  border: 2px solid ${defaultTheme.primaryColor};
-  color: ${defaultTheme.primaryColor};
+  border: 2px solid ${(props) => props.primaryColor};
+  color: ${(props) => props.primaryColor};
   &:hover {
-    background-color: ${defaultTheme.primaryHoverColor};
-    color: ${defaultTheme.textColorOnPrimary};
+    background-color: ${(props) => props.primaryHoverColor};
+    color: ${(props) => props.textColorOnPrimary};
   }
   &:disabled {
     background: none;
-    color: ${defaultTheme.disabled};
-    border-color: ${defaultTheme.disabled};
+    color: ${(props) => props.disabled};
+    border-color: ${(props) => props.disabled};
     cursor: not-allowed;
   }
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
@@ -132,14 +132,14 @@ export const SecondaryButton = styled(Button)`
 export const TertiaryButton = styled(Button)`
   background: none;
   border: none;
-  color: ${defaultTheme.primaryColor};
+  color: ${(props) => props.primaryColor};
   &:hover {
-    background-color: ${defaultTheme.primaryHoverColor};
-    color: ${defaultTheme.textColorOnPrimary};
+    background-color: ${(props) => props.primaryHoverColor};
+    color: ${(props) => props.textColorOnPrimary};
   }
   &:disabled {
     background: none;
-    color: ${defaultTheme.disabled};
+    color: ${(props) => props.disabled};
     cursor: not-allowed;
   }
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
