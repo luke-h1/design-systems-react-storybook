@@ -93,7 +93,7 @@ const Button = styled.button`
   }
 `;
 
-const PrimaryButton = styled(Button)`
+export const PrimaryButton = styled(Button)`
   /* css goes here */
   background-color: ${(props) => props.primaryColor};
   border: none;
@@ -145,4 +145,3 @@ export const TertiaryButton = styled(Button)`
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `;
 
-export default PrimaryButton;
