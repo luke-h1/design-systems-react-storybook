@@ -12,6 +12,61 @@ const BUTTON_MODIFIERS = {
     font-size: ${typeScale.h5};
     padding: 16px 24px;
   `,
+
+  warning: () => `
+    background-color: ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.textColorInverted},
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.warningColorHover},
+      outline: 3px solid ${defaultTheme.status.warningColorHover},
+      
+    }
+
+    &:active { 
+      background-color: ${defaultTheme.status.warningColorActive}
+    }
+  `,
+
+  secondaryButtonWarning: () => `
+    background: none;
+    border: 2px solid ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.status.warningColor};
+  `,
+
+  tertiaryButtonWarning: () => `
+    background: none;
+    color: ${defaultTheme.status.warningColor};
+  
+  `,
+
+  primaryButtonError: () => `
+    background-color: ${defaultTheme.status.errorColor};
+    color: ${defaultTheme.textColorInverted};
+  `,
+
+  secondaryButtonError: () => `
+    background: none;
+    border: 2px solid ${defaultTheme.status.errorColor};
+    color: ${defaultTheme.status.errorColor}; 
+  `,
+
+  tertiaryButtonError: () => `
+    background: none;
+    color: ${defaultTheme.status.errorColor}
+  `,
+  error: () => `
+  background: none;
+  color: ${defaultTheme.status.errorColor};
+  &:hover, &:focus {
+    background-color: ${defaultTheme.status.errorColorHover};
+    outline: 3px solid ${defaultTheme.status.errorColorHover};
+    outline-offset: 2px;
+    border: 2px solid transparent;
+  }
+  &:active {
+    background-color: ${defaultTheme.status.errorColorActive};
+  }
+`,
 };
 
 const Button = styled.button`
