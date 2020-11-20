@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { defaultTheme, typeScale } from '../utils';
+import { typeScale } from '../utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const BUTTON_MODIFIERS = {
@@ -78,24 +78,24 @@ const Button = styled.button`
   font-family: 'Roboto Mono', monospace;
   transition: background-color 0.2s linear, color 0.2s linear;
   &:hover {
-    background-color: ${defaultTheme.primaryHoverColor};
-    color: ${defaultTheme.textColorOnPrimary};
+    background-color: ${(props) => props.primaryHoverColor};
+    color: ${(props) => props.textColorOnPrimary};
   }
   &:focus {
-    outline: 3px solid ${defaultTheme.primaryHoverColor};
+    outline: 3px solid ${(props) => props.primaryHoverColor};
     outline-offset: 2px;
   }
 
   &:active {
-    background-color: ${defaultTheme.primaryActiveColor};
-    border-color: ${defaultTheme.primaryActiveColor};
-    color: ${defaultTheme.textColorOnPrimary};
+    background-color: ${(props) => props.primaryActiveColor};
+    border-color: ${(props) => props.primaryActiveColor};
+    color: ${(props) => props.textColorOnPrimary};
   }
 `;
 
 const PrimaryButton = styled(Button)`
   /* css goes here */
-  background-color: ${defaultTheme.primaryColor};
+  background-color: ${(props) => props.primaryColor};
   border: none;
   color: #fff;
   padding: 12px 24px;
@@ -105,7 +105,7 @@ const PrimaryButton = styled(Button)`
     color: ${(props) => props.theme.textColorOnPrimary};
   }
   &:disabled {
-    background: ${defaultTheme.disabled};
+    background: ${props => props.disabled};
     color: ${(props) => props.theme.textOnDisabled};
     cursor: not-allowed;
   }
